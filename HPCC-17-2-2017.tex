@@ -67,8 +67,85 @@ Li Research Group
 %%%%% DFT SECTION
 \section{DFT}
 
+% Hohenberg-Kohn DFT
 \begin{frame}
 \frametitle{Density Functional Theory (DFT)}
+
+The Hohenberg--Kohn theorems gurantee the following:
+\begin{enumerate}
+  \item The total energy of a fermionic system is a unique functional of the density, $F[\rho(\mathbf{r})]$.
+  \item $F[\rho(\mathbf{r})]$ obtains its minimum value iff it is evaluated at the ground state density $\rho_G$.
+\end{enumerate}
+
+\textbf{Pros:}
+\begin{itemize}
+  \item Formally exact given $F$
+  \item Trivially extends to relativistic treatments.
+  \item No orbitals!
+\end{itemize}
+
+\textbf{Cons:}
+\begin{itemize}
+  \item $F$ is not known for non--trivial systems (jellium)
+  \item Kinetic energy contributions in this form is exceptionally difficult.
+\end{itemize}
+
+\end{frame}
+
+% Kohn-Sham DFT
+\begin{frame}
+\frametitle{Kohn--Sham Density Functional Theory (KS--DFT)}
+
+Kohn and Sham introduced a method to obtain the kinetic energy contribution
+within a mean field, Slater determinant picture
+\begin{equation*}
+\mathcal{H}^{KS} = \frac{1}{2}\Delta + \mathcal{V}(\mathbf{r}) + 
+  \int \mathrm{d}^3\mathbf{r}'\text{ } \frac{\rho(\mathbf{r}')}{\vert \mathbf{r-r}' \vert} +
+  \frac{\delta E^{xc}[\rho(\mathbf{r})]}{\delta \rho(\mathbf{r})}
+\end{equation*}
+
+\begin{equation*}
+\mathcal{H}^{KS} \phi_i(\mathbf{r}) = \epsilon_i\phi_i(\mathbf{r})
+\end{equation*}
+
+
+\textbf{Pros:}
+\begin{itemize}
+  \item Again, formally exact given the exact $E^{xc}$
+  \item Able to easily evaluate kinetic energy through the introduction
+  of molecular orbitals.
+  \item Still trivially extendable to relativistic theory
+\end{itemize}
+
+\textbf{Cons:}
+\begin{itemize}
+  \item $E^{xc}$ is still not known (we have to guess)
+  \item Orbitals introduce complications over density--only methods
+\end{itemize}
+\end{frame}
+
+% KSDFT Finite Basis
+\begin{frame}
+\frametitle{KS--DFT within a Finite Basis}
+
+Casting into the mean--field picture allows for a simple expansion
+of the KS--DFT equations in a finite basis $\{\chi(\mathbf{r})\}$
+\begin{equation*}
+F_{\mu\nu}^{KS} C_{\nu p} = S_{\mu\nu}C_{\nu p} \epsilon_p \qquad \quad
+F_{\mu\nu}^{KS} = h_{\mu\nu} + J_{\mu\nu} + V^{xc}_{\mu\nu}
+\end{equation*}
+
+\begin{equation*}
+X_{\mu\nu} = \int \mathrm{d}^3\mathbf{r}\text{ } \chi_\mu(\mathbf{r}) \mathcal{X} \chi_\nu(\mathbf{r})
+\qquad \quad V^{xc}_{\mu\nu} = \int \mathrm{d}^3\mathbf{r}\text{ } 
+  \frac{\delta E^{xc}[\rho(\mathbf{r})]}{\delta \rho(\mathbf{r})}
+  \chi_\mu(\mathbf{r}) \chi_\nu(\mathbf{r})
+\end{equation*}
+
+Each molecular orbital is then expanded in the basis
+\begin{equation*}
+\phi_p(\mathbf{r}) = C_{\mu p} \chi_\mu(\mathbf{r})
+\end{equation*}
 \end{frame}
 
 %%%%% TDDFT SECTION
