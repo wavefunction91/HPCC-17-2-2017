@@ -18,6 +18,16 @@
 \newcommand{\mat}[1]{\boldsymbol{#1}}
 \newcommand{\dbar}[2]{\left\langle \left. #1 \right\vert \left\vert #2 \right.\right\rangle}
 
+
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+\renewcommand*\footnoterule{}
+
 \title[]{Studying Semi--Classical Molecular Light--Matter Interaction through
 Time--Dependent Density Functional Theory (TD-DFT)}
 \author[Li Research Group, University of Washington]{
@@ -70,6 +80,7 @@ Li Research Group
 % Hohenberg-Kohn DFT
 \begin{frame}
 \frametitle{Density Functional Theory (DFT)}
+\blfootnote{Hohenberg, P.; Kohn, W.; \emph{Phys. Rev.} \textbf{1964}, \emph{136}, B864}
 
 The Hohenberg--Kohn theorems gurantee the following:
 \begin{enumerate}
@@ -77,15 +88,15 @@ The Hohenberg--Kohn theorems gurantee the following:
   \item $F[\rho(\mathbf{r})]$ obtains its minimum value iff it is evaluated at the ground state density $\rho_G$.
 \end{enumerate}
 
-\textbf{Pros:}
 \begin{itemize}
+  \color{green}
   \item Formally exact given $F$
   \item Trivially extends to relativistic treatments.
   \item No orbitals!
 \end{itemize}
 
-\textbf{Cons:}
 \begin{itemize}
+  \color{red}
   \item $F$ is not known for non--trivial systems (jellium)
   \item Kinetic energy contributions in this form is exceptionally difficult.
 \end{itemize}
@@ -95,6 +106,7 @@ The Hohenberg--Kohn theorems gurantee the following:
 % Kohn-Sham DFT
 \begin{frame}
 \frametitle{Kohn--Sham Density Functional Theory (KS--DFT)}
+\blfootnote{Kohn W.; Sham, L. J.; \emph{Phys. Rev.} \textbf{1965}, \emph{140}, A1133}
 
 Kohn and Sham introduced a method to obtain the kinetic energy contribution
 within a mean field, Slater determinant picture
@@ -109,16 +121,15 @@ within a mean field, Slater determinant picture
 \end{equation*}
 
 
-\textbf{Pros:}
 \begin{itemize}
+  \color{green}
   \item Again, formally exact given the exact $E^{xc}$
-  \item Able to easily evaluate kinetic energy through the introduction
-  of molecular orbitals.
+  \item Able to easily evaluate kinetic energy
   \item Still trivially extendable to relativistic theory
 \end{itemize}
 
-\textbf{Cons:}
 \begin{itemize}
+  \color{red}
   \item $E^{xc}$ is still not known (we have to guess)
   \item Orbitals introduce complications over density--only methods
 \end{itemize}
@@ -127,6 +138,7 @@ within a mean field, Slater determinant picture
 % KSDFT Finite Basis
 \begin{frame}
 \frametitle{KS--DFT within a Finite Basis}
+\blfootnote{Pople, J. A.; Gill, P. M. W.; Johnson, B. G. \emph{Chem. Phys. Lett.} \textbf{1992}, \emph{199(6)}, 557.}
 
 Casting into the mean--field picture allows for a simple expansion
 of the KS--DFT equations in a finite basis $\{\chi(\mathbf{r})\}$
@@ -144,8 +156,111 @@ X_{\mu\nu} = \int \mathrm{d}^3\mathbf{r}\text{ } \chi_\mu(\mathbf{r}) \mathcal{X
 
 Each molecular orbital is then expanded in the basis
 \begin{equation*}
-\phi_p(\mathbf{r}) = C_{\mu p} \chi_\mu(\mathbf{r})
+\phi_p(\mathbf{r}) = C_{\mu p} \chi_\mu(\mathbf{r}) \qquad C_{\mu p} \in \mathbb{C}
 \end{equation*}
+\end{frame}
+
+% RelKSDFT
+\begin{frame}
+\frametitle{Relativistic Extensions of DFT}
+
+\begin{itemize}
+  \item The HK theorems have been shown to be Lorentz covariant with the replacement
+  of the density $\rho$, with the 4--current $j^\mu$.
+
+  \item Given the exact functional, we may develop an analogous relativitic Kohn--Sham
+  equation (Dirac--Kohn--Sham),
+  \begin{equation*}
+    \mathcal{H}^{DKS} = c\alpha_\mu p^\mu + c^2\beta + \alpha_\mu \mathcal{V}_s^\mu(\mathbf{r})
+  \end{equation*}
+
+  \item We may cast into a finite basis
+  \begin{equation*}
+    F_{\mu\nu}^{DKS} C_{\nu p} = S_{\mu\nu}C_{\nu p} \epsilon_p \qquad C_{\nu p} \in \mathbb{C}^4
+  \end{equation*}
+\end{itemize}
+\end{frame}
+
+% 2C
+\begin{frame}
+\frametitle{Relativistic Extensions of DFT}
+%\frametitle{Approximate Two--Component KS Methods}
+
+\begin{center} \bf \LARGE Four component KS methods are hard! \end{center}
+\begin{itemize}
+  \item Not variationally bound from below (Positrons!)
+  \item No logical separation of physical observables
+  \item Includes information not generally useful for Chemistry
+  \item Large computational memory bottleneck
+\end{itemize}
+
+\end{frame}
+
+% 2C
+\begin{frame}
+\frametitle{Approximate Two--Component KS Methods}
+
+Formally, there exists a unitary operator, $\mathcal{U}$, that folds the information
+contained in the positronic part of the wave function into the electronic part.
+\begin{equation*}
+\mathcal{U} : \ket{\Psi^\mathrm{4C}} \rightarrow \ket{\Psi^\mathrm{2C}} \in \mathbb{C}^2
+\end{equation*}
+
+\begin{itemize}
+  \color{green}
+  \item Variationally bound from below
+  \item Separates physical observables (SO coupling, etc)
+  \item Contains information from the positronic component without treating it explicitly
+\end{itemize}
+
+\begin{itemize}
+  \color{red}
+  \item In general, an exact $\mathcal{U}$ is not known for the many--body wave function.
+  (Must use approximate decoupling schemes)
+\end{itemize}
+
+\end{frame}
+
+
+% 2C
+\begin{frame}
+\frametitle{Approximate Two--Component KS Methods}
+
+Using the X2C method for $\mathcal{U}$, the DKS equations become
+\begin{equation*}
+F^{X2C}_{\mu\nu} C_{\nu p} = S_{\mu\nu} C_{\nu p} \epsilon_p \qquad C_{\nu p} \in \mathbb{C}^2 \text{ (or }\mathbb{H})
+\end{equation*}
+~\\
+~\\
+Aside: 
+
+This allows for a convienient decomposition
+\begin{equation*}
+F_{\mu\nu}^{X2C} = F_{\mu\nu}^S \otimes I_2 + F_{\mu\nu}^k \otimes \sigma_k
+\end{equation*}
+
+
+\begin{equation*}
+XY = \bpar{X^SY^S + X^kY_k} \otimes I_2 + \bpar{X^S Y^k + X^k Y^S + \mathrm{i}\varepsilon_{kij}X^iY^j}\otimes \sigma_k
+\end{equation*}
+\begin{center} (This will become very useful) \end{center}
+\end{frame}
+
+% Properties
+\begin{frame}
+\frametitle{Properties through KS--DFT}
+
+Given a static operator $\mathcal{O}$ and basis representation $O_{\mu\nu}$, the (time--dependent) expectation value
+of this operator is given as
+\begin{equation*}
+\langle \mathcal{O}(t) \rangle = \mathrm{Tr}[\mathbf{P}(t)\cdot\mathbf{O}]
+\end{equation*}
+
+In particular for 2C methods, if $\mathcal{O}$ doesn't depend on spin, this reduces to
+\begin{equation*}
+\langle \mathcal{O}(t) \rangle = \mathrm{Tr}[\mathbf{P}^S(t)\cdot\mathbf{O}]
+\end{equation*}
+
 \end{frame}
 
 %%%%% TDDFT SECTION
