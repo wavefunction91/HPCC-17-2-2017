@@ -57,11 +57,11 @@ Li Research Group
 \frametitle{Outline}
 
 \begin{itemize}
-  \item Semi--Classical Molecular Scattering of Polarized Light
+  \item Semi--Classical Molecular Light--Matter Interaction 
   \item Density Functional Theory (DFT)
   \item Real--Time Time--Dependent Density Functional Theory (RT-TD-DFT)
-  \item Chebyshev Expansion of the Quantum Propagator
   \item Some Fun Results
+  \item Chebyshev Expansion of the Quantum Propagator
 \end{itemize}
 \end{frame}
 
@@ -70,7 +70,25 @@ Li Research Group
 
 % Molecular Scattering (1)
 \begin{frame}
-\frametitle{Semi--Classical Molecular Scattering of Polarized Light}
+\frametitle{Semi--Classical Molecular Light--Matter Interaction}
+\begin{equation*}
+\mathbf{A}(t) = \int_{0}^t \mathbf{E}(t') \mathrm{d}t'
+\end{equation*}
+\begin{equation*}
+\mathcal{H}(t)\ket{\Psi} = \mathrm{i}\partial_t\ket{\Psi}
+\end{equation*}
+\begin{equation*}
+\mathcal{H}(t) = \mathcal{H}_0 + \mathcal{V}(t)
+\end{equation*}
+\begin{equation*}
+\mathcal{V}(t) = -A_i(t) p^i
+\end{equation*}
+\begin{equation*}
+\mathcal{V}'(t) = - E_i(t) r^i
+\end{equation*}
+\begin{equation*}
+\mu_i(t) = \int_0^t \alpha_{ij}(t' -t) E_j(t') \mathrm{d}t' \implies \mu_i(\omega) = \alpha_{ij}(\omega) E_j(\omega)
+\end{equation*}
 \end{frame}
 
 
@@ -288,6 +306,64 @@ method
 
 \end{frame}
 
+%%%%% RESULTS SECTION
+\section{Results}
+
+\begin{frame}
+\frametitle{Na D--Line Splitting}
+
+\begin{minipage}[h!]{0.45\textwidth}
+\includegraphics[width=\textwidth]{na_fss_dipole}\\
+\includegraphics[width=\textwidth]{na_fss}
+\end{minipage}
+\blfootnote{http://www.astrosurf.com/buil/spectro\_apn/result.htm}
+\blfootnote{http://hyperphysics.phy-astr.gsu.edu/hbase/quantum/sodzee.html}
+\begin{minipage}[h!]{0.50\textwidth}
+
+\includegraphics[width=\textwidth]{NaLines}
+%http://www.astrosurf.com/buil/spectro_apn/result.htm
+
+\begin{minipage}[h!]{0.5\textwidth}
+\includegraphics[width=\textwidth]{Nadoub}
+%http://hyperphysics.phy-astr.gsu.edu/hbase/quantum/sodzee.html
+\end{minipage}
+\begin{minipage}[h!]{0.47\textwidth}
+
+\small
+~\\
+\textbf{Na X2C/6-31G}
+\vspace{-0.5cm}
+\begin{table}
+\begin{tabular}{|l|l|}
+\hline
+E (eV) & $S(\omega)$ \\
+\hline
+\hline
+1.9950 & 301.2\\
+1.9965 & 524.8\\
+\hline
+\end{tabular}
+\end{table}
+\vspace{-0.5cm}
+\begin{table}
+\begin{tabular}{|l|l|}
+\hline
+ & FSS (meV) \\
+\hline
+\hline
+Theor & 1.5\\
+Exp & 2.1\\
+\hline
+\end{tabular}
+\end{table}
+\end{minipage}
+
+\end{minipage}
+\end{frame}
+
+%%%%% CHEBYSHEV SECTION
+\section{Chebyshev}
+
 %%%%% The propagator
 \begin{frame}
 \frametitle{The Expensive Part: The Propagator}
@@ -355,9 +431,6 @@ method
 \end{itemize}
 
 \end{frame}
-
-%%%%% CHEBYSHEV SECTION
-\section{Chebyshev}
 
 \begin{frame}
 \frametitle{Chebyshev Expansion of the Quantum Propagator}
@@ -496,60 +569,6 @@ c_k(\mathbf{x}) = \sum_{n = k}^K a_n(\mathbf{x}) \zeta(n,k)
 \vspace{-1cm}
 \end{frame}
 
-%%%%% RESULTS SECTION
-\section{Results}
-
-\begin{frame}
-\frametitle{Na D--Line Splitting}
-
-\begin{minipage}[h!]{0.45\textwidth}
-\includegraphics[width=\textwidth]{na_fss_dipole}\\
-\includegraphics[width=\textwidth]{na_fss}
-\end{minipage}
-\blfootnote{http://www.astrosurf.com/buil/spectro\_apn/result.htm}
-\blfootnote{http://hyperphysics.phy-astr.gsu.edu/hbase/quantum/sodzee.html}
-\begin{minipage}[h!]{0.50\textwidth}
-
-\includegraphics[width=\textwidth]{NaLines}
-%http://www.astrosurf.com/buil/spectro_apn/result.htm
-
-\begin{minipage}[h!]{0.5\textwidth}
-\includegraphics[width=\textwidth]{Nadoub}
-%http://hyperphysics.phy-astr.gsu.edu/hbase/quantum/sodzee.html
-\end{minipage}
-\begin{minipage}[h!]{0.47\textwidth}
-
-\small
-~\\
-\textbf{Na X2C/6-31G}
-\vspace{-0.5cm}
-\begin{table}
-\begin{tabular}{|l|l|}
-\hline
-E (eV) & $S(\omega)$ \\
-\hline
-\hline
-1.9950 & 301.2\\
-1.9965 & 524.8\\
-\hline
-\end{tabular}
-\end{table}
-\vspace{-0.5cm}
-\begin{table}
-\begin{tabular}{|l|l|}
-\hline
- & FSS (meV) \\
-\hline
-\hline
-Theor & 1.5\\
-Exp & 2.1\\
-\hline
-\end{tabular}
-\end{table}
-\end{minipage}
-
-\end{minipage}
-\end{frame}
 
 
 
