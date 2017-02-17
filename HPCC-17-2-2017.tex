@@ -8,7 +8,7 @@
 \usepackage{amssymb}
 \usepackage{feynmp}
 \usepackage{bm}
-
+\usepackage{mathtools}
 
 \newcommand{\bpar}[1]{\left( #1 \right)}                  % big parentheses
 \newcommand{\bra}[1]{\left \langle #1 \right \vert}
@@ -71,26 +71,93 @@ Li Research Group
 % Molecular Scattering (1)
 \begin{frame}
 \frametitle{Semi--Classical Molecular Light--Matter Interaction}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\includegraphics[width=\textwidth]{BMF_pulse}
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{itemize}
+  \item Simple Absorption
+  \item Circular Dichroism (CD)
+  \item High Harmonic Generation (HHG)
+  \item Vibrational Spectroscopy
+  \begin{itemize}
+    \item Infrared (IR)
+    \item Raman
+  \end{itemize}
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Semi--Classical Molecular Light--Matter Interaction}
+
+(For our purposes) quantum mechanics is governed by the Schr\"{o}dinger (or Dirac--Coulomb--Breit)
+equations
 \begin{equation*}
-\mathbf{A}(t) = \int_{0}^t \mathbf{E}(t') \mathrm{d}t'
+\mathcal{H}(t)\ket{\Psi} = \mathrm{i}\partial_t\ket{\Psi} \qquad \mathcal{H}(t) = \mathcal{H}_0 + \mathcal{V}(t)
 \end{equation*}
+
+The the presence of an electric field, $\mathbf{E}(t)$
 \begin{equation*}
-\mathcal{H}(t)\ket{\Psi} = \mathrm{i}\partial_t\ket{\Psi}
+\mathcal{V}(t) = -A_i(t) p^i \qquad \mathbf{A}(t) = \int_{0}^t \mathbf{E}(t') \mathrm{d}t'
 \end{equation*}
+
+It is often advantageous to work in the so called length gauge, such that
 \begin{equation*}
-\mathcal{H}(t) = \mathcal{H}_0 + \mathcal{V}(t)
+\mathcal{V}(t) \mapsto \mathcal{V}'(t) = - E_i(t) r^i
 \end{equation*}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Semi--Classical Molecular Light--Matter Interaction}
+
+Using time--dependent perturbation theory, we find the absorption probability at a given
+frequency may be written in terms of the dipole--dipole polarizability tensor, $\boldsymbol{\alpha}$
 \begin{equation*}
-\mathcal{V}(t) = -A_i(t) p^i
+S(\omega) \propto \omega \mathrm{Im}\left(\mathrm{Tr}[\boldsymbol{\alpha}(\omega)]\right)
 \end{equation*}
-\begin{equation*}
-\mathcal{V}'(t) = - E_i(t) r^i
-\end{equation*}
+~\\
+~\\
+Within the dipole--approximation, $\boldsymbol{\alpha}$ is related to the 
+time--dependent electric dipole, $\boldsymbol{\mu}(t)$ by
 \begin{equation*}
 \mu_i(t) = \int_0^t \alpha_{ij}(t' -t) E_j(t') \mathrm{d}t' \implies \mu_i(\omega) = \alpha_{ij}(\omega) E_j(\omega)
 \end{equation*}
+
 \end{frame}
 
+\begin{frame}
+\frametitle{Semi--Classical Molecular Light--Matter Interaction}
+
+\begin{columns}
+\begin{column}{0.45\textwidth}
+\includegraphics[width=\textwidth]{na_fss_dipole}
+\end{column}
+\begin{column}{0.1\textwidth}
+$\xRightarrow[(Pade)]{\text{FFT}}$
+\end{column}
+\begin{column}{0.45\textwidth}
+\includegraphics[width=\textwidth]{na_fss}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Semi--Classical Molecular Light--Matter Interaction}
+\begin{center} 
+\LARGE How to obtain $\boldsymbol{\mu}(t)$ given $\mathbf{E}(t)$?
+\end{center}
+~\\
+~\\
+\begin{center}
+\LARGE \bf
+Solve the TDSE (TD--DCBE) Obviously! 
+\end{center}
+\end{frame}
 
 %%%%% DFT SECTION
 \section{DFT}
@@ -100,7 +167,7 @@ Li Research Group
 \frametitle{Density Functional Theory (DFT)}
 \blfootnote{Hohenberg, P.; Kohn, W.; \emph{Phys. Rev.} \textbf{1964}, \emph{136}, B864}
 
-The Hohenberg--Kohn theorems gurantee the following:
+The Hohenberg--Kohn theorems guarantee the following:
 \begin{enumerate}
   \item The total energy of a fermionic system is a unique functional of the density, $F[\rho(\mathbf{r})]$.
   \item $F[\rho(\mathbf{r})]$ obtains its minimum value iff it is evaluated at the ground state density $\rho_G$.
@@ -186,7 +253,7 @@ Each molecular orbital is then expanded in the basis
   \item The HK theorems have been shown to be Lorentz covariant with the replacement
   of the density $\rho$, with the 4--current $j^\mu$.
 
-  \item Given the exact functional, we may develop an analogous relativitic Kohn--Sham
+  \item Given the exact functional, we may develop an analogous relativistic Kohn--Sham
   equation (Dirac--Kohn--Sham),
   \begin{equation*}
     \mathcal{H}^{DKS} = c\alpha_\mu p^\mu + c^2\beta + \alpha_\mu \mathcal{V}_s^\mu(\mathbf{r})
@@ -252,7 +319,7 @@ F^{X2C}_{\mu\nu} C_{\nu p} = S_{\mu\nu} C_{\nu p} \epsilon_p \qquad C_{\nu p} \i
 ~\\
 Aside: 
 
-This allows for a convienient decomposition
+This allows for a convenient decomposition
 \begin{equation*}
 F_{\mu\nu}^{X2C} = F_{\mu\nu}^S \otimes I_2 + F_{\mu\nu}^k \otimes \sigma_k
 \end{equation*}
@@ -361,6 +428,11 @@ Exp & 2.1\\
 \end{minipage}
 \end{frame}
 
+\begin{frame}
+\centering \LARGE \bf VIDEOS\\
+\Large (Credit: Josh Goings)
+\end{frame}
+
 %%%%% CHEBYSHEV SECTION
 \section{Chebyshev}
 
@@ -389,7 +461,7 @@ Exp & 2.1\\
   \begin{itemize}
     \normalsize
     \item No real way to get around the scaling
-    \item Naive implementaion not very parallelizable
+    \item Naive implementation not very parallelizable
   \end{itemize}
 \end{itemize}
 
@@ -422,7 +494,7 @@ Exp & 2.1\\
 \begin{itemize}
   \color{green}
   \item Very parallelizable (GEMM)
-  \item O$(N^3)$ scalaing (with better prefactor)
+  \item O$(N^3)$ scaling (with better prefactor)
 \end{itemize}
 \begin{itemize}
   \color{red}
@@ -455,7 +527,7 @@ Exp & 2.1\\
 \begin{itemize}
   \color{green}
   \item Very parallelizable (GEMM)
-  \item O$(N^3)$ scalaing (with better prefactor than diagonalization)
+  \item O$(N^3)$ scaling (with better prefactor than diagonalization)
   \item Better round off than Taylor series at any given order
 \end{itemize}
 \begin{itemize}
@@ -481,7 +553,7 @@ Only requires explicit formation of matrix powers up to $N/2$!
 }
 \begin{itemize}
   \item Fewer GEMM operations ($N/2 + 1$ as opposed to $N$)
-  \item Less oppurtunity for error propagation through repeated floating point operations.
+  \item Less opportunity for error propagation through repeated floating point operations.
 \end{itemize}
 \end{frame}
 
@@ -521,7 +593,7 @@ Clearly, $T_n$ depends maximally on $X^n$, but also on all other $X^k$ $k < n$.
 \end{align*}
 
 \begin{equation*}
-\sum = 8a_4x^4 + 4\mathrm{i}a_3x^3 - (2a_2 + 8a_4)x^2 + 3\mathrm{i}a_3x
+\sum = 8a_4x^4 + 4\mathrm{i}a_3x^3 - (2a_2 + 8a_4)x^2 + (3\mathrm{i}a_3 - \mathrm{i}a_1)x
 \end{equation*}
 
 \end{frame}
@@ -562,7 +634,7 @@ c_k(\mathbf{x}) = \sum_{n = k}^K a_n(\mathbf{x}) \zeta(n,k)
 \begin{column}{0.5\textwidth}
 \begin{figure}
 \includegraphics[width=0.8\textwidth]{Error2WAnnote}
-\caption{\footnotesize Comparison of error cumulation between Taylor and Chebyshev expansions of the quantum propagator}
+\caption{\footnotesize Comparison of error accumulation between Taylor and Chebyshev expansions of the quantum propagator}
 \end{figure}
 \end{column}
 \end{columns}
