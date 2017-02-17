@@ -17,7 +17,7 @@
 \newcommand{\qop}[1]{\mathscr{#1}}
 \newcommand{\mat}[1]{\boldsymbol{#1}}
 \newcommand{\dbar}[2]{\left\langle \left. #1 \right\vert \left\vert #2 \right.\right\rangle}
-
+\renewcommand{\exp}[1]{\mathrm{exp}\bpar{#1}}
 
 
 \newcommand\blfootnote[1]{%
@@ -268,6 +268,88 @@ In particular for 2C methods, if $\mathcal{O}$ doesn't depend on spin, this redu
 
 \begin{frame}
 \frametitle{Real--Time Time--Dependent Density Functional Theory (RT-TD-DFT)}
+
+The dynamics of the KS electronic density is given by the Liouville--von Neumann (LvN) equation
+\begin{equation*}
+  \mathrm{i}\partial_t\mathbf{P}(t) = \comm{\mathbf{F}(t)}{\mathbf{P}(t)} \qquad F_{\mu\nu}(t) = h_{\mu\nu} + G_{\mu\nu}[\mathbf{P}(t)] + V_{\mu\nu}(t)
+\end{equation*}
+~\\
+
+In practice, we integrate the LvN via the modified midpoint unitary transformation (MMUT)
+method
+\begin{equation*}
+\mathbf{P}(t_{k+1}) = \mathbf{U}(t_k)^\dagger \mathbf{P}(t_{k-1}) \mathbf{U}(t_k)
+\end{equation*}
+\begin{equation*}
+\mathbf{U}(t_k) = \exp{-2\mathrm{i}(\Delta t) \mathbf{F}(t_k)}
+\end{equation*}
+
+\end{frame}
+
+%%%%% The propagator
+\begin{frame}
+\frametitle{The Expensive Part: The Propagator}
+{ \LARGE
+\begin{equation*}
+\mathbf{U}(t_k) = \exp{-2\mathrm{i}(\Delta t) \mathbf{F}(t_k)}
+\end{equation*}
+}
+~\\
+~\\
+~\\
+
+
+\begin{itemize}
+  \item Formation of the KS Fock Matrix $O(N^3)$
+  \begin{itemize}
+    \normalsize
+    \item $O(N)$ on a good day
+    \item Very parallelizable
+  \end{itemize}
+  \item Formation of the matrix exponential $O(N^3)$
+  \begin{itemize}
+    \normalsize
+    \item No real way to get around the scaling
+    \item Naive implementaion not very parallelizable
+  \end{itemize}
+\end{itemize}
+
+\end{frame}
+
+%%%%% The propagator
+\begin{frame}
+\frametitle{The Expensive Part: The Propagator}
+\textbf{Matrix Diagonalization Approach:}
+\begin{equation*}
+\mathbf{U}(t_k) = \mathbf{C}(t_k) \exp{-2\mathrm{i}(\Delta t)\boldsymbol{\epsilon}(t_k)} \mathbf{C}(t_k)^\dagger
+\end{equation*}
+\vspace{-10pt}
+\begin{itemize}
+  \color{green}
+  \item Exact (subject to machine epsilon)
+\end{itemize}
+\begin{itemize}
+  \color{red}
+  \item O$(N^3)$ scaling
+  \item Not efficiently parallelizable
+\end{itemize}
+~\\
+
+\textbf{Taylor Series Expansion:}
+\begin{equation*}
+\mathbf{U}(t_k) = \sum_{j} \frac{(-2\mathrm{i}\Delta t)^j}{j!}\mathbf{F}(t_k)^j
+\end{equation*}
+\begin{itemize}
+  \color{green}
+  \item Very parallelizable (GEMM)
+  \item O$(N^3)$ scalaing (with better prefactor)
+\end{itemize}
+\begin{itemize}
+  \color{red}
+  \item Slowly convergent 
+  \item Round off errors
+\end{itemize}
+
 \end{frame}
 
 %%%%% CHEBYSHEV SECTION
@@ -275,6 +357,105 @@ In particular for 2C methods, if $\mathcal{O}$ doesn't depend on spin, this redu
 
 \begin{frame}
 \frametitle{Chebyshev Expansion of the Quantum Propagator}
+
+\textbf{Chebyshev Expansion:}
+\begin{equation*}
+\exp{-\mathrm{i}\alpha \mathbf{X}} = \mathcal{N} \sum_j  a_j(\tilde{\alpha})T_j(-\mathrm{i}\tilde{\mathbf{X}})
+\end{equation*}
+\begin{align*}
+&a_n(\mathbf{x}) = (2 - \delta_{0n})J_n(\mathbf{x})\\
+&T_n(\mathbf{X}) = 2\mathbf{X}T_{n-1}(\mathbf{X}) - T_{n-2}(\mathbf{X}) \qquad T_0(\mathbf{X}) = \mathbf{I} \quad T_1(\mathbf{X}) = \mathbf{X}
+\end{align*}
+
+\begin{itemize}
+  \color{green}
+  \item Very parallelizable (GEMM)
+  \item O$(N^3)$ scalaing (with better prefactor than diagonalization)
+  \item Better round off than Taylor series at any given order
+\end{itemize}
+\begin{itemize}
+  \color{red}
+  \item ????
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Clever Trick for Matrix Series Expansions}
+
+At any even order, $N$,  a matrix series expansion may be cut in half
+\begin{equation*}
+\sum_n^N c_n \mathbf{X}^n = \sum_n^{N/2} c_n \mathbf{X}^n + \mathbf{X}^{N/2}\sum_n^{N/2} c_{n+N/2}\mathbf{X}^n
+\end{equation*}
+~\\
+~\\
+
+{ \bf
+Only requires explicit formation of matrix powers up to $N/2$!
+}
+\begin{itemize}
+  \item Fewer GEMM operations ($N/2 + 1$ as opposed to $N$)
+  \item Less oppurtunity for error propagation through repeated floating point operations.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Clever Trick for Matrix Series Expansions}
+
+\textbf{Taylor Series Expansion:}
+\begin{equation*}
+c_k = \frac{(-2\mathrm{i}\Delta t)^k}{k!}
+\end{equation*}
+
+\textbf{Chebyshev Expansion:}
+\begin{equation*}
+c_k = \text{ ??}
+\end{equation*}
+\begin{itemize}
+  \item Each term in expansion depends on $T_k$ which non-trivially is related to $X^k$.
+  \item \bf Current form requires full $N$ GEMM operations!
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Unrolling the Chebyshev Expansion}
+
+Clearly, $T_n$ depends maximally on $X^n$, but also on all other $X^k$ $k < n$.
+
+\begin{equation*}
+\sum_n^N c_n(\tilde{\alpha}) \mathbf{\tilde{X}}^n = \sum_n^N  a_n(\tilde{\alpha})T_n(-\mathrm{i}\tilde{\mathbf{X}})
+\end{equation*}
+
+\begin{align*}
+&T_2(x) = 2x^2 - 1\\
+&T_3(x) = 4x^3 - 3x\\
+&T_4(x) = 8x^4 - 8x^2 + 1
+\end{align*}
+
+\begin{equation*}
+\sum = 8a_4x^4 + 4\mathrm{i}a_3x^3 - (2a_2 + 8a_4)x^2 + 3\mathrm{i}a_3x
+\end{equation*}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Unrolling the Chebyshev Expansion}
+
+It turns out (via OEIS...) that this is a geometric progression with a closed form expression,
+thus,
+\begin{equation*}
+c_k(\mathbf{x}) = \sum_{n = k}^K a_k(\mathbf{x}) \zeta(n,k)
+\end{equation*}
+\begin{equation*}
+\zeta(n,k) = \begin{cases}
+0 & (k+n)\text{ odd or } n < k \\
+1 & k = 0 \text{ and } n \text{ even}\\
+\frac{2^{k-1}n}{k} \begin{pmatrix} \frac{n+k}{2} - 2 \\ k - 1\end{pmatrix} & \text{else}
+\end{cases}
+\end{equation*}
+
 \end{frame}
 
 %%%%% RESULTS SECTION
@@ -282,6 +463,53 @@ In particular for 2C methods, if $\mathcal{O}$ doesn't depend on spin, this redu
 
 \begin{frame}
 \frametitle{Na D--Line Splitting}
+
+\begin{minipage}[h!]{0.47\textwidth}
+\includegraphics[width=\textwidth]{na_fss_dipole}\\
+\includegraphics[width=\textwidth]{na_fss}
+\end{minipage}
+\hfill
+\begin{minipage}[h!]{0.50\textwidth}
+
+\includegraphics[width=\textwidth]{NaLines}
+%http://www.astrosurf.com/buil/spectro_apn/result.htm
+
+\begin{minipage}[h!]{0.5\textwidth}
+\includegraphics[width=\textwidth]{Nadoub}
+%http://hyperphysics.phy-astr.gsu.edu/hbase/quantum/sodzee.html
+\end{minipage}
+\begin{minipage}[h!]{0.47\textwidth}
+
+\small
+~\\
+\textbf{Na X2C/6-31G}
+\vspace{-0.5cm}
+\begin{table}
+\begin{tabular}{|l|l|}
+\hline
+E (eV) & $S(\omega)$ \\
+\hline
+\hline
+1.9950 & 301.2\\
+1.9965 & 524.8\\
+\hline
+\end{tabular}
+\end{table}
+\vspace{-0.5cm}
+\begin{table}
+\begin{tabular}{|l|l|}
+\hline
+ & FSS (meV) \\
+\hline
+\hline
+Theor & 1.5\\
+Exp & 2.1\\
+\hline
+\end{tabular}
+\end{table}
+\end{minipage}
+
+\end{minipage}
 \end{frame}
 
 
