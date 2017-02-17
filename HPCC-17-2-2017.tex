@@ -103,7 +103,106 @@ Li Research Group
 \end{column}
 \begin{column}{0.5\textwidth}
 \textbf{Applications:}
-\color{white}
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] Simple Absorption
+  \item[\color{white}] Circular Dichroism (CD)
+  \item[\color{white}] High Harmonic Generation (HHG)
+  \item[\color{white}] Vibrational Spectroscopy
+  \begin{itemize}
+    \color{white}
+    \item[\color{white}] Infrared (IR)
+    \item[\color{white}] Raman
+  \end{itemize}
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Semi--Classical Molecular Light--Matter Interaction}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\includegraphics[width=\textwidth]{BMF_pulse}
+\end{column}
+\begin{column}{0.5\textwidth}
+\textbf{Applications:}
+\begin{itemize}
+  \item Simple Absorption
+  \color{white}
+  \item[\color{white}] Circular Dichroism (CD)
+  \item[\color{white}] High Harmonic Generation (HHG)
+  \item[\color{white}] Vibrational Spectroscopy
+  \begin{itemize}
+    \color{white}
+    \item[\color{white}] Infrared (IR)
+    \item[\color{white}] Raman
+  \end{itemize}
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Semi--Classical Molecular Light--Matter Interaction}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\includegraphics[width=\textwidth]{BMF_pulse}
+\end{column}
+\begin{column}{0.5\textwidth}
+\textbf{Applications:}
+\begin{itemize}
+  \item Simple Absorption
+  \item Circular Dichroism (CD)
+  \color{white}
+  \item[\color{white}] High Harmonic Generation (HHG)
+  \item[\color{white}] Vibrational Spectroscopy
+  \begin{itemize}
+    \color{white}
+    \item[\color{white}] Infrared (IR)
+    \item[\color{white}] Raman
+  \end{itemize}
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Semi--Classical Molecular Light--Matter Interaction}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\includegraphics[width=\textwidth]{BMF_pulse}
+\end{column}
+\begin{column}{0.5\textwidth}
+\textbf{Applications:}
+\begin{itemize}
+  \item Simple Absorption
+  \item Circular Dichroism (CD)
+  \item High Harmonic Generation (HHG)
+  \color{white}
+  \item[\color{white}] Vibrational Spectroscopy
+  \begin{itemize}
+    \color{white}
+    \item[\color{white}] Infrared (IR)
+    \item[\color{white}] Raman
+  \end{itemize}
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Semi--Classical Molecular Light--Matter Interaction}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\includegraphics[width=\textwidth]{BMF_pulse}
+\end{column}
+\begin{column}{0.5\textwidth}
+\textbf{Applications:}
 \begin{itemize}
   \item Simple Absorption
   \item Circular Dichroism (CD)
@@ -118,6 +217,28 @@ Li Research Group
 \end{columns}
 \end{frame}
 
+
+\begin{frame}
+\frametitle{Semi--Classical Molecular Light--Matter Interaction}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\includegraphics[width=\textwidth]{BMF_pulse}
+\end{column}
+\begin{column}{0.5\textwidth}
+\textbf{Applications:}
+\begin{itemize}
+  \item \textbf{Simple Absorption}
+  \item Circular Dichroism (CD)
+  \item High Harmonic Generation (HHG)
+  \item Vibrational Spectroscopy
+  \begin{itemize}
+    \item Infrared (IR)
+    \item Raman
+  \end{itemize}
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
 
 \begin{frame}
 \frametitle{Semi--Classical Molecular Light--Matter Interaction}
@@ -182,6 +303,19 @@ $\xRightarrow[(Pade)]{\text{FFT}}$
 ~\\
 ~\\
 \begin{center}
+\LARGE \bf \color{white}
+Solve the TDSE (TD--DCBE) Obviously! 
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Semi--Classical Molecular Light--Matter Interaction}
+\begin{center} 
+\LARGE How to obtain $\boldsymbol{\mu}(t)$ given $\mathbf{E}(t)$?
+\end{center}
+~\\
+~\\
+\begin{center}
 \LARGE \bf
 Solve the TDSE (TD--DCBE) Obviously! 
 \end{center}
@@ -191,6 +325,134 @@ Solve the TDSE (TD--DCBE) Obviously!
 \section{DFT}
 
 % Hohenberg-Kohn DFT
+\begin{frame}
+\frametitle{Density Functional Theory (DFT)}
+\blfootnote{Hohenberg, P.; Kohn, W.; \emph{Phys. Rev.} \textbf{1964}, \emph{136}, B864}
+
+The Hohenberg--Kohn theorems guarantee the following:
+\begin{enumerate}
+  \item The total energy of a fermionic system is a unique functional of the density, $F[\rho(\mathbf{r})]$.
+  \item $F[\rho(\mathbf{r})]$ obtains its minimum value iff it is evaluated at the ground state density $\rho_G$.
+\end{enumerate}
+
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] Formally exact given $F$
+  \item[\color{white}] Trivially extends to relativistic treatments.
+  \item[\color{white}] No orbitals!
+\end{itemize}
+
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] $F$ is not known for non--trivial systems (jellium)
+  \item[\color{white}] Kinetic energy contributions in this form is exceptionally difficult.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Density Functional Theory (DFT)}
+\blfootnote{Hohenberg, P.; Kohn, W.; \emph{Phys. Rev.} \textbf{1964}, \emph{136}, B864}
+
+The Hohenberg--Kohn theorems guarantee the following:
+\begin{enumerate}
+  \item The total energy of a fermionic system is a unique functional of the density, $F[\rho(\mathbf{r})]$.
+  \item $F[\rho(\mathbf{r})]$ obtains its minimum value iff it is evaluated at the ground state density $\rho_G$.
+\end{enumerate}
+
+\begin{itemize}
+  \color{green}
+  \item Formally exact given $F$
+  \color{white}
+  \item[\color{white}] Trivially extends to relativistic treatments.
+  \item[\color{white}] No orbitals!
+\end{itemize}
+
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] $F$ is not known for non--trivial systems (jellium)
+  \item[\color{white}] Kinetic energy contributions in this form is exceptionally difficult.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Density Functional Theory (DFT)}
+\blfootnote{Hohenberg, P.; Kohn, W.; \emph{Phys. Rev.} \textbf{1964}, \emph{136}, B864}
+
+The Hohenberg--Kohn theorems guarantee the following:
+\begin{enumerate}
+  \item The total energy of a fermionic system is a unique functional of the density, $F[\rho(\mathbf{r})]$.
+  \item $F[\rho(\mathbf{r})]$ obtains its minimum value iff it is evaluated at the ground state density $\rho_G$.
+\end{enumerate}
+
+\begin{itemize}
+  \color{green}
+  \item Formally exact given $F$
+  \item Trivially extends to relativistic treatments.
+  \color{white}
+  \item[\color{white}] No orbitals!
+\end{itemize}
+
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] $F$ is not known for non--trivial systems (jellium)
+  \item[\color{white}] Kinetic energy contributions in this form is exceptionally difficult.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Density Functional Theory (DFT)}
+\blfootnote{Hohenberg, P.; Kohn, W.; \emph{Phys. Rev.} \textbf{1964}, \emph{136}, B864}
+
+The Hohenberg--Kohn theorems guarantee the following:
+\begin{enumerate}
+  \item The total energy of a fermionic system is a unique functional of the density, $F[\rho(\mathbf{r})]$.
+  \item $F[\rho(\mathbf{r})]$ obtains its minimum value iff it is evaluated at the ground state density $\rho_G$.
+\end{enumerate}
+
+\begin{itemize}
+  \color{green}
+  \item Formally exact given $F$
+  \item Trivially extends to relativistic treatments.
+  \item No orbitals!
+\end{itemize}
+
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] $F$ is not known for non--trivial systems (jellium)
+  \item[\color{white}] Kinetic energy contributions in this form is exceptionally difficult.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Density Functional Theory (DFT)}
+\blfootnote{Hohenberg, P.; Kohn, W.; \emph{Phys. Rev.} \textbf{1964}, \emph{136}, B864}
+
+The Hohenberg--Kohn theorems guarantee the following:
+\begin{enumerate}
+  \item The total energy of a fermionic system is a unique functional of the density, $F[\rho(\mathbf{r})]$.
+  \item $F[\rho(\mathbf{r})]$ obtains its minimum value iff it is evaluated at the ground state density $\rho_G$.
+\end{enumerate}
+
+\begin{itemize}
+  \color{green}
+  \item Formally exact given $F$
+  \item Trivially extends to relativistic treatments.
+  \item No orbitals!
+\end{itemize}
+
+\begin{itemize}
+  \color{red}
+  \item $F$ is not known for non--trivial systems (jellium)
+  \color{white}
+  \item[\color{white}] Kinetic energy contributions in this form is exceptionally difficult.
+\end{itemize}
+
+\end{frame}
+
 \begin{frame}
 \frametitle{Density Functional Theory (DFT)}
 \blfootnote{Hohenberg, P.; Kohn, W.; \emph{Phys. Rev.} \textbf{1964}, \emph{136}, B864}
@@ -216,7 +478,167 @@ The Hohenberg--Kohn theorems guarantee the following:
 
 \end{frame}
 
+
+
 % Kohn-Sham DFT
+\begin{frame}
+\frametitle{Kohn--Sham Density Functional Theory (KS--DFT)}
+\blfootnote{Kohn W.; Sham, L. J.; \emph{Phys. Rev.} \textbf{1965}, \emph{140}, A1133}
+
+Kohn and Sham introduced a method to obtain the kinetic energy contribution
+within a mean field, Slater determinant picture
+\begin{equation*}
+\mathcal{H}^{KS} = \frac{1}{2}\Delta + \mathcal{V}(\mathbf{r}) + 
+  \int \mathrm{d}^3\mathbf{r}'\text{ } \frac{\rho(\mathbf{r}')}{\vert \mathbf{r-r}' \vert} +
+  \frac{\delta E^{xc}[\rho(\mathbf{r})]}{\delta \rho(\mathbf{r})}
+\end{equation*}
+
+\begin{equation*}
+\mathcal{H}^{KS} \phi_i(\mathbf{r}) = \epsilon_i\phi_i(\mathbf{r})
+\end{equation*}
+
+
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] Again, formally exact given the exact $E^{xc}$
+  \item[\color{white}] Able to easily evaluate kinetic energy
+  \item[\color{white}] Still trivially extendable to relativistic theory
+\end{itemize}
+
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] $E^{xc}$ is still not known (we have to guess)
+  \item[\color{white}] Orbitals introduce complications over density--only methods
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Kohn--Sham Density Functional Theory (KS--DFT)}
+\blfootnote{Kohn W.; Sham, L. J.; \emph{Phys. Rev.} \textbf{1965}, \emph{140}, A1133}
+
+Kohn and Sham introduced a method to obtain the kinetic energy contribution
+within a mean field, Slater determinant picture
+\begin{equation*}
+\mathcal{H}^{KS} = \frac{1}{2}\Delta + \mathcal{V}(\mathbf{r}) + 
+  \int \mathrm{d}^3\mathbf{r}'\text{ } \frac{\rho(\mathbf{r}')}{\vert \mathbf{r-r}' \vert} +
+  \frac{\delta E^{xc}[\rho(\mathbf{r})]}{\delta \rho(\mathbf{r})}
+\end{equation*}
+
+\begin{equation*}
+\mathcal{H}^{KS} \phi_i(\mathbf{r}) = \epsilon_i\phi_i(\mathbf{r})
+\end{equation*}
+
+
+\begin{itemize}
+  \color{green}
+  \item Again, formally exact given the exact $E^{xc}$
+  \color{white}
+  \item[\color{white}] Able to easily evaluate kinetic energy
+  \item[\color{white}] Still trivially extendable to relativistic theory
+\end{itemize}
+
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] $E^{xc}$ is still not known (we have to guess)
+  \item[\color{white}] Orbitals introduce complications over density--only methods
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Kohn--Sham Density Functional Theory (KS--DFT)}
+\blfootnote{Kohn W.; Sham, L. J.; \emph{Phys. Rev.} \textbf{1965}, \emph{140}, A1133}
+
+Kohn and Sham introduced a method to obtain the kinetic energy contribution
+within a mean field, Slater determinant picture
+\begin{equation*}
+\mathcal{H}^{KS} = \frac{1}{2}\Delta + \mathcal{V}(\mathbf{r}) + 
+  \int \mathrm{d}^3\mathbf{r}'\text{ } \frac{\rho(\mathbf{r}')}{\vert \mathbf{r-r}' \vert} +
+  \frac{\delta E^{xc}[\rho(\mathbf{r})]}{\delta \rho(\mathbf{r})}
+\end{equation*}
+
+\begin{equation*}
+\mathcal{H}^{KS} \phi_i(\mathbf{r}) = \epsilon_i\phi_i(\mathbf{r})
+\end{equation*}
+
+
+\begin{itemize}
+  \color{green}
+  \item Again, formally exact given the exact $E^{xc}$
+  \item Able to easily evaluate kinetic energy
+  \color{white}
+  \item[\color{white}] Still trivially extendable to relativistic theory
+\end{itemize}
+
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] $E^{xc}$ is still not known (we have to guess)
+  \item[\color{white}] Orbitals introduce complications over density--only methods
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Kohn--Sham Density Functional Theory (KS--DFT)}
+\blfootnote{Kohn W.; Sham, L. J.; \emph{Phys. Rev.} \textbf{1965}, \emph{140}, A1133}
+
+Kohn and Sham introduced a method to obtain the kinetic energy contribution
+within a mean field, Slater determinant picture
+\begin{equation*}
+\mathcal{H}^{KS} = \frac{1}{2}\Delta + \mathcal{V}(\mathbf{r}) + 
+  \int \mathrm{d}^3\mathbf{r}'\text{ } \frac{\rho(\mathbf{r}')}{\vert \mathbf{r-r}' \vert} +
+  \frac{\delta E^{xc}[\rho(\mathbf{r})]}{\delta \rho(\mathbf{r})}
+\end{equation*}
+
+\begin{equation*}
+\mathcal{H}^{KS} \phi_i(\mathbf{r}) = \epsilon_i\phi_i(\mathbf{r})
+\end{equation*}
+
+
+\begin{itemize}
+  \color{green}
+  \item Again, formally exact given the exact $E^{xc}$
+  \item Able to easily evaluate kinetic energy
+  \item Still trivially extendable to relativistic theory
+\end{itemize}
+
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] $E^{xc}$ is still not known (we have to guess)
+  \item[\color{white}] Orbitals introduce complications over density--only methods
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Kohn--Sham Density Functional Theory (KS--DFT)}
+\blfootnote{Kohn W.; Sham, L. J.; \emph{Phys. Rev.} \textbf{1965}, \emph{140}, A1133}
+
+Kohn and Sham introduced a method to obtain the kinetic energy contribution
+within a mean field, Slater determinant picture
+\begin{equation*}
+\mathcal{H}^{KS} = \frac{1}{2}\Delta + \mathcal{V}(\mathbf{r}) + 
+  \int \mathrm{d}^3\mathbf{r}'\text{ } \frac{\rho(\mathbf{r}')}{\vert \mathbf{r-r}' \vert} +
+  \frac{\delta E^{xc}[\rho(\mathbf{r})]}{\delta \rho(\mathbf{r})}
+\end{equation*}
+
+\begin{equation*}
+\mathcal{H}^{KS} \phi_i(\mathbf{r}) = \epsilon_i\phi_i(\mathbf{r})
+\end{equation*}
+
+
+\begin{itemize}
+  \color{green}
+  \item Again, formally exact given the exact $E^{xc}$
+  \item Able to easily evaluate kinetic energy
+  \item Still trivially extendable to relativistic theory
+\end{itemize}
+
+\begin{itemize}
+  \color{red}
+  \item $E^{xc}$ is still not known (we have to guess)
+  \color{white}
+  \item[\color{white}] Orbitals introduce complications over density--only methods
+\end{itemize}
+\end{frame}
+
 \begin{frame}
 \frametitle{Kohn--Sham Density Functional Theory (KS--DFT)}
 \blfootnote{Kohn W.; Sham, L. J.; \emph{Phys. Rev.} \textbf{1965}, \emph{140}, A1133}
@@ -301,6 +723,66 @@ Each molecular orbital is then expanded in the basis
 
 \begin{center} \bf \LARGE Four component KS methods are hard! \end{center}
 \begin{itemize}
+  \color{white}
+  \item[\color{white}] Not variationally bound from below (Positrons!)
+  \item[\color{white}] No logical separation of physical observables
+  \item[\color{white}] Includes information not generally useful for Chemistry
+  \item[\color{white}] Large computational memory bottleneck
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Relativistic Extensions of DFT}
+%\frametitle{Approximate Two--Component KS Methods}
+
+\begin{center} \bf \LARGE Four component KS methods are hard! \end{center}
+\begin{itemize}
+  \item Not variationally bound from below (Positrons!)
+  \color{white}
+  \item[\color{white}] No logical separation of physical observables
+  \item[\color{white}] Includes information not generally useful for Chemistry
+  \item[\color{white}] Large computational memory bottleneck
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Relativistic Extensions of DFT}
+%\frametitle{Approximate Two--Component KS Methods}
+
+\begin{center} \bf \LARGE Four component KS methods are hard! \end{center}
+\begin{itemize}
+  \item Not variationally bound from below (Positrons!)
+  \item No logical separation of physical observables
+  \color{white}
+  \item[\color{white}] Includes information not generally useful for Chemistry
+  \item[\color{white}] Large computational memory bottleneck
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Relativistic Extensions of DFT}
+%\frametitle{Approximate Two--Component KS Methods}
+
+\begin{center} \bf \LARGE Four component KS methods are hard! \end{center}
+\begin{itemize}
+  \item Not variationally bound from below (Positrons!)
+  \item No logical separation of physical observables
+  \item Includes information not generally useful for Chemistry
+  \color{white}
+  \item[\color{white}] Large computational memory bottleneck
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Relativistic Extensions of DFT}
+%\frametitle{Approximate Two--Component KS Methods}
+
+\begin{center} \bf \LARGE Four component KS methods are hard! \end{center}
+\begin{itemize}
   \item Not variationally bound from below (Positrons!)
   \item No logical separation of physical observables
   \item Includes information not generally useful for Chemistry
@@ -310,6 +792,104 @@ Each molecular orbital is then expanded in the basis
 \end{frame}
 
 % 2C
+\begin{frame}
+\frametitle{Approximate Two--Component KS Methods}
+
+Formally, there exists a unitary operator, $\mathcal{U}$, that folds the information
+contained in the positronic part of the wave function into the electronic part.
+\begin{equation*}
+\mathcal{U} : \ket{\Psi^\mathrm{4C}} \rightarrow \ket{\Psi^\mathrm{2C}} \in \mathbb{C}^2
+\end{equation*}
+
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] Variationally bound from below
+  \item[\color{white}] Separates physical observables (SO coupling, etc)
+  \item[\color{white}] Contains information from the positronic component without treating it explicitly
+\end{itemize}
+
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] In general, an exact $\mathcal{U}$ is not known for the many--body wave function.
+  (Must use approximate decoupling schemes)
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Approximate Two--Component KS Methods}
+
+Formally, there exists a unitary operator, $\mathcal{U}$, that folds the information
+contained in the positronic part of the wave function into the electronic part.
+\begin{equation*}
+\mathcal{U} : \ket{\Psi^\mathrm{4C}} \rightarrow \ket{\Psi^\mathrm{2C}} \in \mathbb{C}^2
+\end{equation*}
+
+\begin{itemize}
+  \color{green}
+  \item Variationally bound from below
+  \color{white}
+  \item[\color{white}] Separates physical observables (SO coupling, etc)
+  \item[\color{white}] Contains information from the positronic component without treating it explicitly
+\end{itemize}
+
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] In general, an exact $\mathcal{U}$ is not known for the many--body wave function.
+  (Must use approximate decoupling schemes)
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Approximate Two--Component KS Methods}
+
+Formally, there exists a unitary operator, $\mathcal{U}$, that folds the information
+contained in the positronic part of the wave function into the electronic part.
+\begin{equation*}
+\mathcal{U} : \ket{\Psi^\mathrm{4C}} \rightarrow \ket{\Psi^\mathrm{2C}} \in \mathbb{C}^2
+\end{equation*}
+
+\begin{itemize}
+  \color{green}
+  \item Variationally bound from below
+  \item Separates physical observables (SO coupling, etc)
+  \color{white}
+  \item[\color{white}] Contains information from the positronic component without treating it explicitly
+\end{itemize}
+
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] In general, an exact $\mathcal{U}$ is not known for the many--body wave function.
+  (Must use approximate decoupling schemes)
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Approximate Two--Component KS Methods}
+
+Formally, there exists a unitary operator, $\mathcal{U}$, that folds the information
+contained in the positronic part of the wave function into the electronic part.
+\begin{equation*}
+\mathcal{U} : \ket{\Psi^\mathrm{4C}} \rightarrow \ket{\Psi^\mathrm{2C}} \in \mathbb{C}^2
+\end{equation*}
+
+\begin{itemize}
+  \color{green}
+  \item Variationally bound from below
+  \item Separates physical observables (SO coupling, etc)
+  \item Contains information from the positronic component without treating it explicitly
+\end{itemize}
+
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] In general, an exact $\mathcal{U}$ is not known for the many--body wave function.
+  (Must use approximate decoupling schemes)
+\end{itemize}
+
+\end{frame}
+
 \begin{frame}
 \frametitle{Approximate Two--Component KS Methods}
 
@@ -336,6 +916,30 @@ contained in the positronic part of the wave function into the electronic part.
 
 
 % 2C
+\begin{frame}
+\frametitle{Approximate Two--Component KS Methods}
+
+Using the X2C method for $\mathcal{U}$, the DKS equations become
+\begin{equation*}
+F^{X2C}_{\mu\nu} C_{\nu p} = S_{\mu\nu} C_{\nu p} \epsilon_p \qquad C_{\nu p} \in \mathbb{C}^2 \text{ (or }\mathbb{H})
+\end{equation*}
+~\\
+~\\
+\color{white}
+Aside: 
+
+This allows for a convenient decomposition
+\begin{equation*}
+F_{\mu\nu}^{X2C} = F_{\mu\nu}^S \otimes I_2 + F_{\mu\nu}^k \otimes \sigma_k
+\end{equation*}
+
+
+\begin{equation*}
+XY = \bpar{X^SY^S + X^kY_k} \otimes I_2 + \bpar{X^S Y^k + X^k Y^S + \mathrm{i}\varepsilon_{kij}X^iY^j}\otimes \sigma_k
+\end{equation*}
+\begin{center} (This will become very useful) \end{center}
+\end{frame}
+
 \begin{frame}
 \frametitle{Approximate Two--Component KS Methods}
 
@@ -503,6 +1107,301 @@ Exp & 2.1\\
 \begin{equation*}
 \mathbf{U}(t_k) = \mathbf{C}(t_k) \exp{-2\mathrm{i}(\Delta t)\boldsymbol{\epsilon}(t_k)} \mathbf{C}(t_k)^\dagger
 \end{equation*}
+\color{white}
+\vspace{-10pt}
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] Exact (subject to machine epsilon)
+\end{itemize}
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] O$(N^3)$ scaling
+  \item[\color{white}] Not efficiently parallelizable
+\end{itemize}
+~\\
+
+\textbf{Taylor Series Expansion:}
+\begin{equation*}
+\mathbf{U}(t_k) = \sum_{j} \frac{(-2\mathrm{i}\Delta t)^j}{j!}\mathbf{F}(t_k)^j
+\end{equation*}
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] Very parallelizable (GEMM)
+  \item[\color{white}] O$(N^3)$ scaling (with better prefactor)
+\end{itemize}
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] Slowly convergent 
+  \item[\color{white}] Round off errors
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{The Expensive Part: The Propagator}
+\blfootnote{DBWY; Goings, J.J; Li. X.; \emph{JCTC}. \textbf{2016}, 7, 4501.}
+\textbf{Matrix Diagonalization Approach:}
+\begin{equation*}
+\mathbf{U}(t_k) = \mathbf{C}(t_k) \exp{-2\mathrm{i}(\Delta t)\boldsymbol{\epsilon}(t_k)} \mathbf{C}(t_k)^\dagger
+\end{equation*}
+\color{white}
+\vspace{-10pt}
+\begin{itemize}
+  \color{green}
+  \item Exact (subject to machine epsilon)
+\end{itemize}
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] O$(N^3)$ scaling
+  \item[\color{white}] Not efficiently parallelizable
+\end{itemize}
+~\\
+
+\textbf{Taylor Series Expansion:}
+\begin{equation*}
+\mathbf{U}(t_k) = \sum_{j} \frac{(-2\mathrm{i}\Delta t)^j}{j!}\mathbf{F}(t_k)^j
+\end{equation*}
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] Very parallelizable (GEMM)
+  \item[\color{white}] O$(N^3)$ scaling (with better prefactor)
+\end{itemize}
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] Slowly convergent 
+  \item[\color{white}] Round off errors
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{The Expensive Part: The Propagator}
+\blfootnote{DBWY; Goings, J.J; Li. X.; \emph{JCTC}. \textbf{2016}, 7, 4501.}
+\textbf{Matrix Diagonalization Approach:}
+\begin{equation*}
+\mathbf{U}(t_k) = \mathbf{C}(t_k) \exp{-2\mathrm{i}(\Delta t)\boldsymbol{\epsilon}(t_k)} \mathbf{C}(t_k)^\dagger
+\end{equation*}
+\color{white}
+\vspace{-10pt}
+\begin{itemize}
+  \color{green}
+  \item Exact (subject to machine epsilon)
+\end{itemize}
+\begin{itemize}
+  \color{red}
+  \item O$(N^3)$ scaling
+  \color{white}
+  \item[\color{white}] Not efficiently parallelizable
+\end{itemize}
+~\\
+
+\textbf{Taylor Series Expansion:}
+\begin{equation*}
+\mathbf{U}(t_k) = \sum_{j} \frac{(-2\mathrm{i}\Delta t)^j}{j!}\mathbf{F}(t_k)^j
+\end{equation*}
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] Very parallelizable (GEMM)
+  \item[\color{white}] O$(N^3)$ scaling (with better prefactor)
+\end{itemize}
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] Slowly convergent 
+  \item[\color{white}] Round off errors
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{The Expensive Part: The Propagator}
+\blfootnote{DBWY; Goings, J.J; Li. X.; \emph{JCTC}. \textbf{2016}, 7, 4501.}
+\textbf{Matrix Diagonalization Approach:}
+\begin{equation*}
+\mathbf{U}(t_k) = \mathbf{C}(t_k) \exp{-2\mathrm{i}(\Delta t)\boldsymbol{\epsilon}(t_k)} \mathbf{C}(t_k)^\dagger
+\end{equation*}
+\color{white}
+\vspace{-10pt}
+\begin{itemize}
+  \color{green}
+  \item Exact (subject to machine epsilon)
+\end{itemize}
+\begin{itemize}
+  \color{red}
+  \item O$(N^3)$ scaling
+  \item Not efficiently parallelizable
+\end{itemize}
+~\\
+
+\textbf{Taylor Series Expansion:}
+\begin{equation*}
+\mathbf{U}(t_k) = \sum_{j} \frac{(-2\mathrm{i}\Delta t)^j}{j!}\mathbf{F}(t_k)^j
+\end{equation*}
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] Very parallelizable (GEMM)
+  \item[\color{white}] O$(N^3)$ scaling (with better prefactor)
+\end{itemize}
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] Slowly convergent 
+  \item[\color{white}] Round off errors
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{The Expensive Part: The Propagator}
+\blfootnote{DBWY; Goings, J.J; Li. X.; \emph{JCTC}. \textbf{2016}, 7, 4501.}
+\textbf{Matrix Diagonalization Approach:}
+\begin{equation*}
+\mathbf{U}(t_k) = \mathbf{C}(t_k) \exp{-2\mathrm{i}(\Delta t)\boldsymbol{\epsilon}(t_k)} \mathbf{C}(t_k)^\dagger
+\end{equation*}
+\vspace{-10pt}
+\begin{itemize}
+  \color{green}
+  \item Exact (subject to machine epsilon)
+\end{itemize}
+\begin{itemize}
+  \color{red}
+  \item O$(N^3)$ scaling
+  \item Not efficiently parallelizable
+\end{itemize}
+~\\
+
+\textbf{Taylor Series Expansion:}
+\begin{equation*}
+\mathbf{U}(t_k) = \sum_{j} \frac{(-2\mathrm{i}\Delta t)^j}{j!}\mathbf{F}(t_k)^j
+\end{equation*}
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] Very parallelizable (GEMM)
+  \item[\color{white}] O$(N^3)$ scaling (with better prefactor)
+\end{itemize}
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] Slowly convergent 
+  \item[\color{white}] Round off errors
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{The Expensive Part: The Propagator}
+\blfootnote{DBWY; Goings, J.J; Li. X.; \emph{JCTC}. \textbf{2016}, 7, 4501.}
+\textbf{Matrix Diagonalization Approach:}
+\begin{equation*}
+\mathbf{U}(t_k) = \mathbf{C}(t_k) \exp{-2\mathrm{i}(\Delta t)\boldsymbol{\epsilon}(t_k)} \mathbf{C}(t_k)^\dagger
+\end{equation*}
+\vspace{-10pt}
+\begin{itemize}
+  \color{green}
+  \item Exact (subject to machine epsilon)
+\end{itemize}
+\begin{itemize}
+  \color{red}
+  \item O$(N^3)$ scaling
+  \item Not efficiently parallelizable
+\end{itemize}
+~\\
+
+\textbf{Taylor Series Expansion:}
+\begin{equation*}
+\mathbf{U}(t_k) = \sum_{j} \frac{(-2\mathrm{i}\Delta t)^j}{j!}\mathbf{F}(t_k)^j
+\end{equation*}
+\begin{itemize}
+  \color{green}
+  \item Very parallelizable (GEMM)
+  \color{white}
+  \item[\color{white}] O$(N^3)$ scaling (with better prefactor)
+\end{itemize}
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] Slowly convergent 
+  \item[\color{white}] Round off errors
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{The Expensive Part: The Propagator}
+\blfootnote{DBWY; Goings, J.J; Li. X.; \emph{JCTC}. \textbf{2016}, 7, 4501.}
+\textbf{Matrix Diagonalization Approach:}
+\begin{equation*}
+\mathbf{U}(t_k) = \mathbf{C}(t_k) \exp{-2\mathrm{i}(\Delta t)\boldsymbol{\epsilon}(t_k)} \mathbf{C}(t_k)^\dagger
+\end{equation*}
+\vspace{-10pt}
+\begin{itemize}
+  \color{green}
+  \item Exact (subject to machine epsilon)
+\end{itemize}
+\begin{itemize}
+  \color{red}
+  \item O$(N^3)$ scaling
+  \item Not efficiently parallelizable
+\end{itemize}
+~\\
+
+\textbf{Taylor Series Expansion:}
+\begin{equation*}
+\mathbf{U}(t_k) = \sum_{j} \frac{(-2\mathrm{i}\Delta t)^j}{j!}\mathbf{F}(t_k)^j
+\end{equation*}
+\begin{itemize}
+  \color{green}
+  \item Very parallelizable (GEMM)
+  \item O$(N^3)$ scaling (with better prefactor)
+\end{itemize}
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] Slowly convergent 
+  \item[\color{white}] Round off errors
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{The Expensive Part: The Propagator}
+\blfootnote{DBWY; Goings, J.J; Li. X.; \emph{JCTC}. \textbf{2016}, 7, 4501.}
+\textbf{Matrix Diagonalization Approach:}
+\begin{equation*}
+\mathbf{U}(t_k) = \mathbf{C}(t_k) \exp{-2\mathrm{i}(\Delta t)\boldsymbol{\epsilon}(t_k)} \mathbf{C}(t_k)^\dagger
+\end{equation*}
+\vspace{-10pt}
+\begin{itemize}
+  \color{green}
+  \item Exact (subject to machine epsilon)
+\end{itemize}
+\begin{itemize}
+  \color{red}
+  \item O$(N^3)$ scaling
+  \item Not efficiently parallelizable
+\end{itemize}
+~\\
+
+\textbf{Taylor Series Expansion:}
+\begin{equation*}
+\mathbf{U}(t_k) = \sum_{j} \frac{(-2\mathrm{i}\Delta t)^j}{j!}\mathbf{F}(t_k)^j
+\end{equation*}
+\begin{itemize}
+  \color{green}
+  \item Very parallelizable (GEMM)
+  \item O$(N^3)$ scaling (with better prefactor)
+\end{itemize}
+\begin{itemize}
+  \color{red}
+  \item Slowly convergent 
+  \color{white}
+  \item[\color{white}] Round off errors
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{The Expensive Part: The Propagator}
+\blfootnote{DBWY; Goings, J.J; Li. X.; \emph{JCTC}. \textbf{2016}, 7, 4501.}
+\textbf{Matrix Diagonalization Approach:}
+\begin{equation*}
+\mathbf{U}(t_k) = \mathbf{C}(t_k) \exp{-2\mathrm{i}(\Delta t)\boldsymbol{\epsilon}(t_k)} \mathbf{C}(t_k)^\dagger
+\end{equation*}
 \vspace{-10pt}
 \begin{itemize}
   \color{green}
@@ -553,6 +1452,140 @@ Exp & 2.1\\
 \end{align*}
 
 \begin{itemize}
+  \color{white}
+  \item[\color{white}] Very parallelizable (GEMM)
+  \item[\color{white}] O$(N^3)$ scaling (with better prefactor than diagonalization)
+  \item[\color{white}] Better round off than Taylor series at any given order
+\end{itemize}
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] ????
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Chebyshev Expansion of the Quantum Propagator}
+\blfootnote{DBWY; Goings, J.J; Li. X.; \emph{JCTC}. \textbf{2016}, 7, 4501.}
+
+\begin{columns}
+\begin{column}{0.7\textwidth}
+\textbf{Chebyshev Expansion:}
+\begin{equation*}
+\exp{-\mathrm{i}\alpha \mathbf{X}} = \mathcal{N} \sum_j  a_j(\tilde{\alpha})T_j(-\mathrm{i}\tilde{\mathbf{X}})
+\end{equation*}
+\end{column}
+\begin{column}{0.3\textwidth}
+\includegraphics[width=0.7\textwidth]{Chebyshev}
+\end{column}
+\end{columns}
+\begin{align*}
+&a_n(\mathbf{x}) = (2 - \delta_{0n})J_n(\mathbf{x})\\
+&T_n(\mathbf{X}) = 2\mathbf{X}T_{n-1}(\mathbf{X}) - T_{n-2}(\mathbf{X}) \qquad T_0(\mathbf{X}) = \mathbf{I} \quad T_1(\mathbf{X}) = \mathbf{X}
+\end{align*}
+
+\begin{itemize}
+  \color{green}
+  \item Very parallelizable (GEMM)
+  \color{white}
+  \item[\color{white}] O$(N^3)$ scaling (with better prefactor than diagonalization)
+  \item[\color{white}] Better round off than Taylor series at any given order
+\end{itemize}
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] ????
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Chebyshev Expansion of the Quantum Propagator}
+\blfootnote{DBWY; Goings, J.J; Li. X.; \emph{JCTC}. \textbf{2016}, 7, 4501.}
+
+\begin{columns}
+\begin{column}{0.7\textwidth}
+\textbf{Chebyshev Expansion:}
+\begin{equation*}
+\exp{-\mathrm{i}\alpha \mathbf{X}} = \mathcal{N} \sum_j  a_j(\tilde{\alpha})T_j(-\mathrm{i}\tilde{\mathbf{X}})
+\end{equation*}
+\end{column}
+\begin{column}{0.3\textwidth}
+\includegraphics[width=0.7\textwidth]{Chebyshev}
+\end{column}
+\end{columns}
+\begin{align*}
+&a_n(\mathbf{x}) = (2 - \delta_{0n})J_n(\mathbf{x})\\
+&T_n(\mathbf{X}) = 2\mathbf{X}T_{n-1}(\mathbf{X}) - T_{n-2}(\mathbf{X}) \qquad T_0(\mathbf{X}) = \mathbf{I} \quad T_1(\mathbf{X}) = \mathbf{X}
+\end{align*}
+
+\begin{itemize}
+  \color{green}
+  \item Very parallelizable (GEMM)
+  \item O$(N^3)$ scaling (with better prefactor than diagonalization)
+  \color{white}
+  \item[\color{white}] Better round off than Taylor series at any given order
+\end{itemize}
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] ????
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Chebyshev Expansion of the Quantum Propagator}
+\blfootnote{DBWY; Goings, J.J; Li. X.; \emph{JCTC}. \textbf{2016}, 7, 4501.}
+
+\begin{columns}
+\begin{column}{0.7\textwidth}
+\textbf{Chebyshev Expansion:}
+\begin{equation*}
+\exp{-\mathrm{i}\alpha \mathbf{X}} = \mathcal{N} \sum_j  a_j(\tilde{\alpha})T_j(-\mathrm{i}\tilde{\mathbf{X}})
+\end{equation*}
+\end{column}
+\begin{column}{0.3\textwidth}
+\includegraphics[width=0.7\textwidth]{Chebyshev}
+\end{column}
+\end{columns}
+\begin{align*}
+&a_n(\mathbf{x}) = (2 - \delta_{0n})J_n(\mathbf{x})\\
+&T_n(\mathbf{X}) = 2\mathbf{X}T_{n-1}(\mathbf{X}) - T_{n-2}(\mathbf{X}) \qquad T_0(\mathbf{X}) = \mathbf{I} \quad T_1(\mathbf{X}) = \mathbf{X}
+\end{align*}
+
+\begin{itemize}
+  \color{green}
+  \item Very parallelizable (GEMM)
+  \item O$(N^3)$ scaling (with better prefactor than diagonalization)
+  \item Better round off than Taylor series at any given order
+\end{itemize}
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] ????
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Chebyshev Expansion of the Quantum Propagator}
+\blfootnote{DBWY; Goings, J.J; Li. X.; \emph{JCTC}. \textbf{2016}, 7, 4501.}
+
+\begin{columns}
+\begin{column}{0.7\textwidth}
+\textbf{Chebyshev Expansion:}
+\begin{equation*}
+\exp{-\mathrm{i}\alpha \mathbf{X}} = \mathcal{N} \sum_j  a_j(\tilde{\alpha})T_j(-\mathrm{i}\tilde{\mathbf{X}})
+\end{equation*}
+\end{column}
+\begin{column}{0.3\textwidth}
+\includegraphics[width=0.7\textwidth]{Chebyshev}
+\end{column}
+\end{columns}
+\begin{align*}
+&a_n(\mathbf{x}) = (2 - \delta_{0n})J_n(\mathbf{x})\\
+&T_n(\mathbf{X}) = 2\mathbf{X}T_{n-1}(\mathbf{X}) - T_{n-2}(\mathbf{X}) \qquad T_0(\mathbf{X}) = \mathbf{I} \quad T_1(\mathbf{X}) = \mathbf{X}
+\end{align*}
+
+\begin{itemize}
   \color{green}
   \item Very parallelizable (GEMM)
   \item O$(N^3)$ scaling (with better prefactor than diagonalization)
@@ -575,7 +1608,67 @@ At any even order, $N$,  a matrix series expansion may be cut in half
 \end{equation*}
 ~\\
 ~\\
+\color{white}
+{ \bf
+Only requires explicit formation of matrix powers up to $N/2$!
+}
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] Fewer GEMM operations ($N/2 + 1$ as opposed to $N$)
+  \item[\color{white}] Less opportunity for error propagation through repeated floating point operations.
+\end{itemize}
+\end{frame}
 
+\begin{frame}
+\frametitle{Clever Trick for Matrix Series Expansions}
+\blfootnote{DBWY; Goings, J.J; Li. X.; \emph{JCTC}. \textbf{2016}, 7, 4501.}
+
+At any even order, $N$,  a matrix series expansion may be cut in half
+\begin{equation*}
+\sum_n^N c_n \mathbf{X}^n = \sum_n^{N/2} c_n \mathbf{X}^n + \mathbf{X}^{N/2}\sum_n^{N/2} c_{n+N/2}\mathbf{X}^n
+\end{equation*}
+~\\
+~\\
+{ \bf
+Only requires explicit formation of matrix powers up to $N/2$!
+}
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] Fewer GEMM operations ($N/2 + 1$ as opposed to $N$)
+  \item[\color{white}] Less opportunity for error propagation through repeated floating point operations.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Clever Trick for Matrix Series Expansions}
+\blfootnote{DBWY; Goings, J.J; Li. X.; \emph{JCTC}. \textbf{2016}, 7, 4501.}
+
+At any even order, $N$,  a matrix series expansion may be cut in half
+\begin{equation*}
+\sum_n^N c_n \mathbf{X}^n = \sum_n^{N/2} c_n \mathbf{X}^n + \mathbf{X}^{N/2}\sum_n^{N/2} c_{n+N/2}\mathbf{X}^n
+\end{equation*}
+~\\
+~\\
+{ \bf
+Only requires explicit formation of matrix powers up to $N/2$!
+}
+\begin{itemize}
+  \item Fewer GEMM operations ($N/2 + 1$ as opposed to $N$)
+  \color{white}
+  \item[\color{white}] Less opportunity for error propagation through repeated floating point operations.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Clever Trick for Matrix Series Expansions}
+\blfootnote{DBWY; Goings, J.J; Li. X.; \emph{JCTC}. \textbf{2016}, 7, 4501.}
+
+At any even order, $N$,  a matrix series expansion may be cut in half
+\begin{equation*}
+\sum_n^N c_n \mathbf{X}^n = \sum_n^{N/2} c_n \mathbf{X}^n + \mathbf{X}^{N/2}\sum_n^{N/2} c_{n+N/2}\mathbf{X}^n
+\end{equation*}
+~\\
+~\\
 { \bf
 Only requires explicit formation of matrix powers up to $N/2$!
 }
@@ -594,6 +1687,64 @@ Only requires explicit formation of matrix powers up to $N/2$!
 c_k = \frac{(-2\mathrm{i}\Delta t)^k}{k!}
 \end{equation*}
 
+\color{white}
+\textbf{Chebyshev Expansion:}
+\begin{equation*}
+c_k = \text{ ??}
+\end{equation*}
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] Each term in expansion depends on $T_k$ which non-trivially is related to $X^k$.
+  \item[\color{white}] \bf Current form requires full $N$ GEMM operations!
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Clever Trick for Matrix Series Expansions}
+
+\textbf{Taylor Series Expansion:}
+\begin{equation*}
+c_k = \frac{(-2\mathrm{i}\Delta t)^k}{k!}
+\end{equation*}
+
+\textbf{Chebyshev Expansion:}
+\begin{equation*}
+c_k = \text{ ??}
+\end{equation*}
+\begin{itemize}
+  \color{white}
+  \item[\color{white}] Each term in expansion depends on $T_k$ which non-trivially is related to $X^k$.
+  \item[\color{white}] \bf Current form requires full $N$ GEMM operations!
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Clever Trick for Matrix Series Expansions}
+
+\textbf{Taylor Series Expansion:}
+\begin{equation*}
+c_k = \frac{(-2\mathrm{i}\Delta t)^k}{k!}
+\end{equation*}
+
+\textbf{Chebyshev Expansion:}
+\begin{equation*}
+c_k = \text{ ??}
+\end{equation*}
+\begin{itemize}
+  \item Each term in expansion depends on $T_k$ which non-trivially is related to $X^k$.
+  \color{white}
+  \item[\color{white}] \bf Current form requires full $N$ GEMM operations!
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Clever Trick for Matrix Series Expansions}
+
+\textbf{Taylor Series Expansion:}
+\begin{equation*}
+c_k = \frac{(-2\mathrm{i}\Delta t)^k}{k!}
+\end{equation*}
+
 \textbf{Chebyshev Expansion:}
 \begin{equation*}
 c_k = \text{ ??}
@@ -602,6 +1753,29 @@ c_k = \text{ ??}
   \item Each term in expansion depends on $T_k$ which non-trivially is related to $X^k$.
   \item \bf Current form requires full $N$ GEMM operations!
 \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Unrolling the Chebyshev Expansion}
+\blfootnote{DBWY; Goings, J.J; Li. X.; \emph{JCTC}. \textbf{2016}, 7, 4501.}
+
+Clearly, $T_n$ depends maximally on $X^n$, but also on all other $X^k$ $k < n$.
+
+\begin{equation*}
+\sum_n^N c_n(\tilde{\alpha}) \mathbf{\tilde{X}}^n = \sum_n^N  a_n(\tilde{\alpha})T_n(-\mathrm{i}\tilde{\mathbf{X}})
+\end{equation*}
+
+\color{white}
+\begin{align*}
+&T_2(x) = 2x^2 - 1\\
+&T_3(x) = 4x^3 - 3x\\
+&T_4(x) = 8x^4 - 8x^2 + 1
+\end{align*}
+
+\begin{equation*}
+\sum = 8a_4x^4 + 4\mathrm{i}a_3x^3 - (2a_2 + 8a_4)x^2 + (3\mathrm{i}a_3 - \mathrm{i}a_1)x
+\end{equation*}
+
 \end{frame}
 
 \begin{frame}
