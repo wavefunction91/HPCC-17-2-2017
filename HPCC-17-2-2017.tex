@@ -268,6 +268,8 @@ In particular for 2C methods, if $\mathcal{O}$ doesn't depend on spin, this redu
 
 \begin{frame}
 \frametitle{Real--Time Time--Dependent Density Functional Theory (RT-TD-DFT)}
+\blfootnote{Li, X.; Smith, S. M.; Markevitch, A. N.; Romanov, D. A.; Levis, R.
+J.; Schlegel, H. B. \emph{PCCP} \textbf{2005}, 7, 233−239.}
 
 The dynamics of the KS electronic density is given by the Liouville--von Neumann (LvN) equation
 \begin{equation*}
@@ -289,6 +291,7 @@ method
 %%%%% The propagator
 \begin{frame}
 \frametitle{The Expensive Part: The Propagator}
+\blfootnote{DBWY; Goings, J.J; Li. X.; \emph{JCTC}. \textbf{2016}, 7, 4501.}
 { \LARGE
 \begin{equation*}
 \mathbf{U}(t_k) = \exp{-2\mathrm{i}(\Delta t) \mathbf{F}(t_k)}
@@ -319,6 +322,7 @@ method
 %%%%% The propagator
 \begin{frame}
 \frametitle{The Expensive Part: The Propagator}
+\blfootnote{DBWY; Goings, J.J; Li. X.; \emph{JCTC}. \textbf{2016}, 7, 4501.}
 \textbf{Matrix Diagonalization Approach:}
 \begin{equation*}
 \mathbf{U}(t_k) = \mathbf{C}(t_k) \exp{-2\mathrm{i}(\Delta t)\boldsymbol{\epsilon}(t_k)} \mathbf{C}(t_k)^\dagger
@@ -357,11 +361,19 @@ method
 
 \begin{frame}
 \frametitle{Chebyshev Expansion of the Quantum Propagator}
+\blfootnote{DBWY; Goings, J.J; Li. X.; \emph{JCTC}. \textbf{2016}, 7, 4501.}
 
+\begin{columns}
+\begin{column}{0.7\textwidth}
 \textbf{Chebyshev Expansion:}
 \begin{equation*}
 \exp{-\mathrm{i}\alpha \mathbf{X}} = \mathcal{N} \sum_j  a_j(\tilde{\alpha})T_j(-\mathrm{i}\tilde{\mathbf{X}})
 \end{equation*}
+\end{column}
+\begin{column}{0.3\textwidth}
+\includegraphics[width=0.7\textwidth]{Chebyshev}
+\end{column}
+\end{columns}
 \begin{align*}
 &a_n(\mathbf{x}) = (2 - \delta_{0n})J_n(\mathbf{x})\\
 &T_n(\mathbf{X}) = 2\mathbf{X}T_{n-1}(\mathbf{X}) - T_{n-2}(\mathbf{X}) \qquad T_0(\mathbf{X}) = \mathbf{I} \quad T_1(\mathbf{X}) = \mathbf{X}
@@ -382,6 +394,7 @@ method
 
 \begin{frame}
 \frametitle{Clever Trick for Matrix Series Expansions}
+\blfootnote{DBWY; Goings, J.J; Li. X.; \emph{JCTC}. \textbf{2016}, 7, 4501.}
 
 At any even order, $N$,  a matrix series expansion may be cut in half
 \begin{equation*}
@@ -420,6 +433,7 @@ c_k = \text{ ??}
 
 \begin{frame}
 \frametitle{Unrolling the Chebyshev Expansion}
+\blfootnote{DBWY; Goings, J.J; Li. X.; \emph{JCTC}. \textbf{2016}, 7, 4501.}
 
 Clearly, $T_n$ depends maximally on $X^n$, but also on all other $X^k$ $k < n$.
 
@@ -448,7 +462,7 @@ Clearly, $T_n$ depends maximally on $X^n$, but also on all other $X^k$ $k < n$.
 It turns out (via OEIS...) that this is a geometric progression with a closed form expression,
 thus,
 \begin{equation*}
-c_k(\mathbf{x}) = \sum_{n = k}^K a_k(\mathbf{x}) \zeta(n,k)
+c_k(\mathbf{x}) = \sum_{n = k}^K a_n(\mathbf{x}) \zeta(n,k)
 \end{equation*}
 \begin{equation*}
 \zeta(n,k) = \begin{cases}
@@ -466,11 +480,12 @@ c_k(\mathbf{x}) = \sum_{n = k}^K a_k(\mathbf{x}) \zeta(n,k)
 \begin{frame}
 \frametitle{Na D--Line Splitting}
 
-\begin{minipage}[h!]{0.47\textwidth}
+\begin{minipage}[h!]{0.45\textwidth}
 \includegraphics[width=\textwidth]{na_fss_dipole}\\
 \includegraphics[width=\textwidth]{na_fss}
 \end{minipage}
-\hfill
+\blfootnote{http://www.astrosurf.com/buil/spectro\_apn/result.htm}
+\blfootnote{http://hyperphysics.phy-astr.gsu.edu/hbase/quantum/sodzee.html}
 \begin{minipage}[h!]{0.50\textwidth}
 
 \includegraphics[width=\textwidth]{NaLines}
